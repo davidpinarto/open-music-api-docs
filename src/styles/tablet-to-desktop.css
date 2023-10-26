@@ -1,0 +1,63 @@
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  #content {
+    padding-left: 5rem;
+    line-height: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  span {
+    font-size: 0.8rem;
+  }
+}
+
+/* Laptop */
+@media only screen and (min-width: 992px) {
+  a:hover,
+  a:active {
+    text-decoration-thickness: 0.2rem;
+    color: darkolivegreen;
+  }
+
+  #content {
+    grid-template-columns: 0.4fr 1fr;
+    padding: 1rem;
+  }
+
+  #side-navigation {
+    display: block;
+    position: sticky;
+    align-self: start;
+    top: 1rem;
+    height: 95vh;
+    overflow-y: scroll;
+  }
+
+  #side-navigation::-webkit-scrollbar {
+    display: none;
+  }
+
+  #side-navigation ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 1rem;
+    list-style: none;
+    line-height: 1.3rem;
+  }
+
+  .content-container {
+    padding-right: 5rem;
+    transition: all 0.3s ease;
+  }
+}
+
+/* Extra large devices */
+@media only screen and (min-width: 1200px) {
+  #content {
+    grid-template-columns: 0.5fr 1fr;
+  }
+}

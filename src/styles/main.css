@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #dde6ed;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+p {
+  font-size: 0.7rem;
+}
+
+span {
+  font-size: 0.5rem;
+}
+
+a {
+  display: inline-block;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+  text-decoration-color: green;
+  text-decoration-thickness: 0.2rem;
+}
+
+#side-navigation {
+  display: none;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#content {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+#base-url {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#endpoints {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#users-auth-endpoints {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.endpoints-container div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.restrict-src {
+  margin-left: 1rem;
+  padding: 1rem 0.5rem;
+  background-color: rgba(255, 160, 122, 0.444);
+  border-left: solid 1px gray;
+}
+
+.all-endpoints {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}

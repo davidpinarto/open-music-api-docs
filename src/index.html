@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Music API Docs</title>
+  </head>
+  <body>
+    <main id="content">
+      <nav id="side-navigation">
+        <ul>
+          <li>
+            <a href="#base-url"><p>Base Url</p></a>
+          </li>
+          <li>
+            <a href="#endpoints">Endpoints</a>
+          </li>
+          <li>
+            <ul>
+              <li>
+                <a href="#users-auth-endpoints">
+                  <p>Users and Authentications</p>
+                </a>
+              </li>
+              <ul>
+                <li>
+                  <a href="#post-user">
+                    <p>Add New User</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#post-auth">
+                    <p>Add New Authentications</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#put-auth">
+                    <p>Update Access Token With Refresh Token</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#del-auth">
+                    <p>Delete User Authentications</p>
+                  </a>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>
+                <a href="#albums-endpoints">
+                  <p>Albums Endpoints</p>
+                </a>
+              </li>
+              <ul>
+                <li>
+                  <a href="#post-albums">
+                    <p>Add New Album</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#get-albums">
+                    <p>Get Album By Id</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#put-albums">
+                    <p>Edit Album By Id</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#del-albums">
+                    <p>Delete Album By Id</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#post-albums-covers">
+                    <p>Upload Album Cover</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#likes-albums">
+                    <p>Like Album</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#unlike-albums">
+                    <p>Unlike Album</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#get-albums-likes">
+                    <p>Get Number Of Likes Albums</p>
+                  </a>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>
+                <a href="#songs-endpoints">
+                  <p>Songs Endpoints</p>
+                </a>
+              </li>
+              <ul>
+                <li>
+                  <a href="#post-songs">
+                    <p>Add New Songs</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#get-songs">
+                    <p>Get Songs</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#get-song-by-id">
+                    <p>Get Song By Id</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#edit-song-by-id">
+                    <p>Edit Song By Id</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#del-song-by-id">
+                    <p>Delete Song By Id</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#search-song-by-query">
+                    <p>Search Songs Query by Songs Title and Songs Performer</p>
+                  </a>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>
+                <a href="#playlists-endpoints">
+                  <p>Playlists Endpoints</p>
+                </a>
+              </li>
+              <ul>
+                <li>
+                  <a href="#post-playlists">
+                    <p>Create Playlist</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#get-playlists">
+                    <p>Get Playlists</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#del-playlists">
+                    <p>Delete Playlist By Playlist Id</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#post-song-playlists">
+                    <p>Add Song To Playlist</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#get-song-playlists">
+                    <p>Get Song In Playlist</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#del-song-playlists">
+                    <p>Delete Song In Playlist</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#get-playlists-activities">
+                    <p>Get Playlists Activities</p>
+                  </a>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>
+                <a href="#collaborations-endpoints">
+                  <p>Collaborations Endpoints</p>
+                </a>
+              </li>
+              <ul>
+                <li>
+                  <a href="#post-collaborations">
+                    <p>Add Collaboration</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#del-collaborations">
+                    <p>Delete Collaboration</p>
+                  </a>
+                </li>
+              </ul>
+            </ul>
+          </li>
+          <li>
+            <ul>
+              <li>
+                <a href="#export-endpoints">
+                  <p>Export Endpoints</p>
+                </a>
+              </li>
+              <ul>
+                <li>
+                  <a href="#export-songs">
+                    <p>Export Songs In Playlist</p>
+                  </a>
+                </li>
+              </ul>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="content-container">
+        <a id="openmusic-api" href="#openmusic-api">
+          <h1>Open Music API Docs</h1>
+        </a>
+
+        <div id="base-url">
+          <a href="#base-url">
+            <h2>Base Url</h2>
+          </a>
+          <a href="https://openmusic-api.dapi.my.id" target="_blank"
+            ><p>https://openmusic-api.dapi.my.id</p></a
+          >
+        </div>
+
+        <div id="endpoints">
+          <a href="#endpoints">
+            <h2>Endpoints</h2>
+          </a>
+          <div id="users-auth-endpoints" class="all-endpoints">
+            <a href="#users-auth-endpoints">
+              <h2>Registration and Authentications Endpoint</h2>
+            </a>
+            <div class="endpoints-container">
+              <div id="post-user">
+                <a href="#post-user">
+                  <h3>Add New User</h3>
+                </a>
+                <blockquote>
+                  <p>This API for adding new user</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: POST</p>
+                  </li>
+                  <li>
+                    <p>Path: /users</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>username: string</p>
+                      </li>
+                      <li>
+                        <p>password: string</p>
+                      </li>
+                      <li>
+                        <p>fullname: string</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 201</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { userId }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="post-auth">
+                <a href="#post-auth">
+                  <h3>Add New Authentications</h3>
+                </a>
+                <blockquote>
+                  <p>
+                    This API will generate access token and refresh token with
+                    JWT authentications
+                  </p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: POST</p>
+                  </li>
+                  <li>
+                    <p>Path: /authentications</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>username: string</p>
+                      </li>
+                      <li>
+                        <p>password: string</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 201</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { accessToken, refreshToken }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="put-auth">
+                <a href="#put-auth">
+                  <h3>Update Access Token With Refresh Token</h3>
+                </a>
+                <blockquote>
+                  <p>
+                    This API will update user expire access token with refresh
+                    token and return new access token for user
+                  </p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: PUT</p>
+                  </li>
+                  <li>
+                    <p>Path: /authentications</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>refreshToken: string</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 200</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { accessToken }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="del-auth">
+                <a href="#del-auth">
+                  <h3>Delete User Authentications</h3>
+                </a>
+                <blockquote>
+                  <p>This API will delete refresh token on database</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: DELETE</p>
+                  </li>
+                  <li>
+                    <p>Path: /authentications</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>refreshToken: string</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="albums-endpoints" class="all-endpoints">
+            <a href="#albums-endpoints">
+              <h2>Albums Endpoints</h2>
+            </a>
+            <div class="endpoints-container">
+              <div id="post-albums">
+                <a href="#post-albums">
+                  <h3>Add New Album</h3>
+                </a>
+                <blockquote>
+                  <p>This API will create a new album on database</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: POST</p>
+                  </li>
+                  <li>
+                    <p>Path: /albums</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>name: string</p>
+                      </li>
+                      <li>
+                        <p>year: number</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 201</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { albumId }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="get-albums">
+                <a href="#get-albums">
+                  <h3>Get Album By Id</h3>
+                </a>
+                <blockquote>
+                  <p>This API will return album by album id</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: GET</p>
+                  </li>
+                  <li>
+                    <p>Path: /albums/:id</p>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 200</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { album }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="put-albums">
+                <a href="#put-albums">
+                  <h3>Edit Album By Id</h3>
+                </a>
+                <blockquote>
+                  <p>This API will edit the album by id on database</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: PUT</p>
+                  </li>
+                  <li>
+                    <p>Path: /albums/:id</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>name: string</p>
+                      </li>
+                      <li>
+                        <p>year: number</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 200</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { albumId }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="del-albums">
+                <a href="#del-albums">
+                  <h3>Delete Album By Id</h3>
+                </a>
+                <blockquote>
+                  <p>This API will delete album by id on database</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: DELETE</p>
+                  </li>
+                  <li>
+                    <p>Path: /albums/:id</p>
+                  </li>
+                </ul>
+              </div>
+              <div id="post-albums-covers">
+                <a href="#post-albums-covers">
+                  <h3>Upload Album Cover</h3>
+                </a>
+                <blockquote>
+                  <p>This API will upload and provide covers for album</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: POST</p>
+                  </li>
+                  <li>
+                    <p>Path: /albums/:id/covers</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Form: multipart/form-data</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>
+                          cover: file
+                          <br />
+                          (<i>MIME types from images and max file is 500KB</i>)
+                        </p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="likes-albums">
+                <a href="#likes-albums">
+                  <h3>Like Album</h3>
+                </a>
+                <blockquote>
+                  <p>This API is a feature for liking albums</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: POST</p>
+                  </li>
+                  <li>
+                    <p>Path: /albums/:id/likes</p>
+                  </li>
+                </ul>
+              </div>
+              <div id="unlike-albums">
+                <a href="#unlike-albums">
+                  <h3>Unlike Album</h3>
+                </a>
+                <blockquote>
+                  <p>This API is a feature for unliking albums</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: DELETE</p>
+                  </li>
+                  <li>
+                    <p>Path: /albums/:id/likes</p>
+                  </li>
+                </ul>
+              </div>
+              <div id="get-albums-likes">
+                <a href="#get-albums-likes">
+                  <h3>Get Number Of Likes Albums</h3>
+                </a>
+                <blockquote>
+                  <p>
+                    This API is a feature to see the number of likes for an
+                    album
+                  </p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: GET</p>
+                  </li>
+                  <li>
+                    <p>Path: /albums/:id/likes</p>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 200</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { likes }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="songs-endpoints" class="all-endpoints">
+            <a href="#songs-endpoints">
+              <h2>Songs Endpoints</h2>
+            </a>
+            <div class="endpoints-container">
+              <div id="post-songs">
+                <a href="#post-songs">
+                  <h3>Add New Songs</h3>
+                </a>
+                <blockquote>
+                  <p>This API will add a new songs on database</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: POST</p>
+                  </li>
+                  <li>
+                    <p>Path: /songs</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>title: string</p>
+                      </li>
+                      <li>
+                        <p>year: number</p>
+                      </li>
+                      <li>
+                        <p>genre: string</p>
+                      </li>
+                      <li>
+                        <p>performer: string</p>
+                      </li>
+                      <li>
+                        <p>duration: number?</p>
+                      </li>
+                      <li>
+                        <p>albumId: string?</p>
+                      </li>
+                      <span> (<i>? is optional request</i>)</span>
+                    </ul>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 201</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { songId }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="get-songs">
+                <a href="#get-songs">
+                  <h3>Get Songs</h3>
+                </a>
+                <blockquote>
+                  <p>This API will return all songs on database</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: GET</p>
+                  </li>
+                  <li>
+                    <p>Path: /songs</p>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 200</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { songs }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="get-song-by-id">
+                <a href="#get-song-by-id">
+                  <h3>Get Song By Id</h3>
+                </a>
+                <blockquote>
+                  <p>This API will return song by song id on database</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: GET</p>
+                  </li>
+                  <li>
+                    <p>Path: /songs/:id</p>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 200</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { song }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="edit-song-by-id">
+                <a href="#edit-song-by-id">
+                  <h3>Edit Song By Id</h3>
+                </a>
+                <blockquote>
+                  <p>This API will edit song by song id on database</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: PUT</p>
+                  </li>
+                  <li>
+                    <p>Path: /songs/:id</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>title: string</p>
+                      </li>
+                      <li>
+                        <p>year: number</p>
+                      </li>
+                      <li>
+                        <p>genre: string</p>
+                      </li>
+                      <li>
+                        <p>performer: string</p>
+                      </li>
+                      <li>
+                        <p>duration: number?</p>
+                      </li>
+                      <li>
+                        <p>albumId: string?</p>
+                      </li>
+                      <span> (<i>? is optional request</i>)</span>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="del-song-by-id">
+                <a href="#del-song-by-id">
+                  <h3>Delete Song By Id</h3>
+                </a>
+                <blockquote>
+                  <p>This API will delete song by song id on database</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: DELETE</p>
+                  </li>
+                  <li>
+                    <p>Path: /songs/:id</p>
+                  </li>
+                </ul>
+              </div>
+              <div id="search-song-by-query">
+                <a href="#search-song-by-query">
+                  <h3>Search Songs Query by Songs Title and Songs Performer</h3>
+                </a>
+                <blockquote>
+                  <p>
+                    This API will return song data based on the request from the
+                    query
+                  </p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: GET</p>
+                  </li>
+                  <li>
+                    <p>Path: /songs?{title='example'}&{performer='example'}</p>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 200</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { songs }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="playlists-endpoints" class="all-endpoints">
+            <a href="#playlists-endpoints">
+              <h2>Playlists Endpoints</h2>
+            </a>
+            <blockquote class="restrict-src">
+              <p>
+                (Playlists are a limited resource. To access it requires an
+                access token)
+              </p>
+            </blockquote>
+            <div class="endpoints-container">
+              <div id="post-playlists">
+                <a href="#post-playlists">
+                  <h3>Create Playlist</h3>
+                </a>
+                <blockquote>
+                  <p>This API will create playlist</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: POST</p>
+                  </li>
+                  <li>
+                    <p>Path: /playlists</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                      <li><p>Authorization: Bearer {Access Token}</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>name: string</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 201</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { playlistId }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="get-playlists">
+                <a href="#get-playlists">
+                  <h3>Get Playlists</h3>
+                </a>
+                <blockquote>
+                  <p>
+                    This API will get playlist that user owned or collaborated
+                  </p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: GET</p>
+                  </li>
+                  <li>
+                    <p>Path: /playlists</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Authorization: Bearer {Access Token}</p></li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 200</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { playlists }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="del-playlists">
+                <a href="#del-playlists">
+                  <h3>Delete Playlist By Playlist Id</h3>
+                </a>
+                <blockquote>
+                  <p>This API will delete playlist by playlist id</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: DELETE</p>
+                  </li>
+                  <li>
+                    <p>Path: /playlists/:id</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Authorization: Bearer {Access Token}</p></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="post-song-playlists">
+                <a href="#post-song-playlists">
+                  <h3>Add Song To Playlist</h3>
+                </a>
+                <blockquote>
+                  <p>
+                    This API will add a song to owned or collaborated playlist
+                  </p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: POST</p>
+                  </li>
+                  <li>
+                    <p>Path: /playlists/:id/songs</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                      <li><p>Authorization: Bearer {Access Token}</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>songId: string</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="get-song-playlists">
+                <a href="#get-song-playlists">
+                  <h3>Get Song In Playlist</h3>
+                </a>
+                <blockquote>
+                  <p>This API will return a song data from playlist</p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: GET</p>
+                  </li>
+                  <li>
+                    <p>Path: /playlists/:id/songs</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Authorization: Bearer {Access Token}</p></li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 200</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { playlist }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="del-song-playlists">
+                <a href="#del-song-playlists">
+                  <h3>Delete Song In Playlist</h3>
+                </a>
+                <blockquote>
+                  <p>
+                    This API will delete a song in playlist (<i
+                      >only owner or collaborator can delete song in playlist</i
+                    >)
+                  </p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: DELETE</p>
+                  </li>
+                  <li>
+                    <p>Path: /playlists/:id/songs</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Authorization: Bearer {Access Token}</p></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="get-playlists-activities">
+                <a href="#get-playlists-activities">
+                  <h3>Get Playlists Activities</h3>
+                </a>
+                <blockquote>
+                  <p>
+                    This API will return the history of adding or removing songs
+                    from a playlist by a user or collaborator
+                  </p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: GET</p>
+                  </li>
+                  <li>
+                    <p>Path: /playlists/:id/activities</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Authorization: Bearer {Access Token}</p></li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 200</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { playlistId, activities }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="collaborations-endpoints" class="all-endpoints">
+            <a href="#collaborations-endpoints">
+              <h2>Collaborations Endpoints</h2>
+            </a>
+            <blockquote class="restrict-src">
+              <p>
+                (Collaborations are a limited resource. To access it requires an
+                access token)
+              </p>
+            </blockquote>
+            <div class="endpoints-container">
+              <div id="post-collaborations">
+                <a href="#post-collaborations">
+                  <h3>Add Collaboration</h3>
+                </a>
+                <blockquote>
+                  <p>
+                    This API will give access to the desired user to be able to
+                    access your playlist
+                  </p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: POST</p>
+                  </li>
+                  <li>
+                    <p>Path: /collaborations</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                      <li><p>Authorization: Bearer {Access Token}</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>playlistId: string</p>
+                      </li>
+                      <li>
+                        <p>userId: string</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>If success the response should be return some data:</p>
+                <ul>
+                  <li>
+                    <p>Status Code: 201</p>
+                  </li>
+                  <li>
+                    <p>Body Response:</p>
+                    <ul>
+                      <li>
+                        <p>status: 'success'</p>
+                      </li>
+                      <li>
+                        <p>data: { collaborationId }</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div id="del-collaborations">
+                <a href="#del-collaborations">
+                  <h3>Delete Collaboration</h3>
+                </a>
+                <blockquote>
+                  <p>
+                    This API will remove playlist access permissions for the
+                    intended user
+                  </p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: DELETE</p>
+                  </li>
+                  <li>
+                    <p>Path: /collaborations</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                      <li><p>Authorization: Bearer {Access Token}</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>playlistId: string</p>
+                      </li>
+                      <li>
+                        <p>userId: string</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="export-endpoints" class="all-endpoints">
+            <a href="#export-endpoints">
+              <h2>Export Endpoints</h2>
+            </a>
+            <blockquote class="restrict-src">
+              <p>
+                (Export are a limited resource. To access it requires an access
+                token)
+              </p>
+            </blockquote>
+            <div class="endpoints-container">
+              <div id="export-songs">
+                <a href="#export-songs">
+                  <h3>Export Songs In Playlist</h3>
+                </a>
+                <blockquote>
+                  <p>
+                    This API will send a message to rabbitmq (as message broker)
+                    to send the song in playlist to targeted email (only
+                    playlist owner can export song in playlist)
+                  </p>
+                </blockquote>
+                <ul>
+                  <li>
+                    <p>Method: POST</p>
+                  </li>
+                  <li>
+                    <p>Path: /export/playlists/:playlistId</p>
+                  </li>
+                  <li>
+                    <p>Headers:</p>
+                    <ul>
+                      <li><p>Content-Type: application/json</p></li>
+                      <li><p>Authorization: Bearer {Access Token}</p></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <p>Body Request:</p>
+                    <ul>
+                      <li>
+                        <p>targetEmail: string</p>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script src="./app.js"></script>
+</html>
